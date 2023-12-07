@@ -5,9 +5,9 @@ interface DirectorInterface {
 }
 
 interface TeacherInterface {
-	workFromHome: () => string;
-	getCoffeeBreak: () => string;
-	workTeacherTasks: () => string;
+	workFromHome(): string;
+	getCoffeeBreak(): string;
+	workTeacherTasks(): string;
 }
 
 class Director implements DirectorInterface {
@@ -38,6 +38,16 @@ class Teacher implements TeacherInterface {
 	}
 }
 
+type Subjects = 'Math' | 'History';
+
+function teachClass(todayClass: Subjects): string {
+  if (todayClass === 'Math') {
+    return 'Teaching Math';
+  } else if (todayClass === 'History') {
+    return 'Teaching History';
+  }
+}
+
 const createEmployee = (salary: number | string): Director | Teacher => {
 	if (typeof salary === 'number' && salary < 500) {
 		return new Teacher();
@@ -46,8 +56,19 @@ const createEmployee = (salary: number | string): Director | Teacher => {
 	}
 }
 
+const isDirector = (employee: any): employee is Director => {
+	return (employee as Director).workDirectorTasks !== undefined;
+}
+
+const executeWork = (employee: Director | Teacher) => {
+	return isDirector(employee) ? employee.workDirectorTasks() : employee.workTeacherTasks();
+}
 
 // test
 console.log(createEmployee(200));
 console.log(createEmployee(1000));
 console.log(createEmployee("$1000"));
+console.log(executeWork(createEmployee(200)));
+console.log(executeWork(createEmployee(1000)));
+console.log(teachClass('Math'));
+console.log(teachClass('History'));
