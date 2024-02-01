@@ -1,0 +1,16 @@
+{
+  "name": "0x06-unittests_in_js",
+  "version": "1.0.0",
+  "description": "alx: unittests in javascript",
+  "main": "0-calcul.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "node",
+    "unittest",
+    "javascript"
+  ],
+  "author": "esmond-adjei <xmongram@gamil.com>",
+  "license": "ISC"
+}
