@@ -11,4 +11,4 @@ describe('sendPaymentRequestToApi', () => {
         expect(calculateNumberSpy.calledWith('SUM', 100, 20)).to.be.true;
         calculateNumberSpy.restore();
     })
-});
+})
