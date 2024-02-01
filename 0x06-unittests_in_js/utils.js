@@ -1,5 +1,5 @@
 const Utils = {
-  calculateNumber: (type, a, b) => {
+  calculateNumber(type, a, b) {
     let result;
     switch (type) {
         case 'SUM': result = Math.round(a) + Math.round(b); break;
@@ -9,6 +9,6 @@ const Utils = {
     }
     return result;
   }
-}
+};
 
 module.exports = Utils;
