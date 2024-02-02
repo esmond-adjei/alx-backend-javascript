@@ -29,7 +29,7 @@ function countStudents(path) {
         }
       });
 
-      console.log(`Number of students: ${lines.length}`);
+      console.log(`Number of students: ${lines.length - 1}`);
       console.log(`Number of students in CS: ${grpCount1}. List: ${grpList1.join(', ')}`);
       console.log(`Number of students in SWE: ${grpCount2}. List: ${grpList2.join(', ')}`);
 
