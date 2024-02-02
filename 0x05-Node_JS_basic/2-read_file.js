@@ -2,7 +2,7 @@ const fs = require('fs');
 
 function countStudents(path) {
   try {
-    const data = fs.readFileSync(path, 'utf8');
+    const data = fs.readFileSync(path, 'utf-8');
     const lines = data.split('\n').filter(line => line.trim() !== '');
 
     let grpCount1 = 0;
@@ -33,4 +33,3 @@ function countStudents(path) {
 }
 
 module.exports = countStudents;
-
